@@ -19,16 +19,16 @@
     </header>
     
     <main class="p-12 text-center flex-grow">
-        <h2 class="text-3xl font-bold text-gray-800">Bem-vindo(a)!</h2>
-        <img style="width: 200px; justify-self: center; margin: 30px;" src="assets/bem-vindo.gif">
-        <p class="text-gray-600 mt-2">Aprender Libras é mais que aprender um idioma, é inclusão, direito, 
-          respeito, comunicação e acessibilidade. Aqui você vai aprender
-          sinais básicos e comunicação em situações do dia a dia.</p>
-        <h2 style="margin: 30px;" class="text-3xl font-bold text-gray-800">O que é Libras?</h2>
-        <p class="text-gray-600 mt-2">Libras é a sigla da Língua Brasileira de Sinais, uma língua gestual-visual que permite comunicação por gestos, 
-          expressões faciais e corporais. É um meio reconhecido de comunicação desde 24 de abril de 2002, 
-          pela Lei nº 10. 436. A Libras é amplamente utilizada na comunicação com surdos, sendo uma importante ferramenta de inclusão social.</p>
-    </main>
+      <h2 class="text-3xl font-bold text-gray-800">Bem-vindo(a)!</h2>
+      <img style="width: 200px; justify-self: center; margin: 30px;" src="assets/bem-vindo.gif">
+      <p class="text-gray-600 mt-2">Aprender Libras é mais que aprender um idioma, é inclusão, direito, 
+        respeito, comunicação e acessibilidade. Aqui você vai aprender
+        sinais básicos e comunicação em situações do dia a dia.</p>
+      <h2 style="margin: 30px;" class="text-3xl font-bold text-gray-800">O que é Libras?</h2>
+      <p class="text-gray-600 mt-2">Libras é a sigla da Língua Brasileira de Sinais, uma língua gestual-visual que permite comunicação por gestos, 
+        expressões faciais e corporais. É um meio reconhecido de comunicação desde 24 de abril de 2002, 
+        pela Lei nº 10. 436. A Libras é amplamente utilizada na comunicação com surdos, sendo uma importante ferramenta de inclusão social.</p>
+  </main>
     
     <footer class="bg-blue-600 text-white text-center p-4">
         <p>&copy; 2025 Sinais do Saber. Todos os direitos reservados.</p>
@@ -43,6 +43,16 @@
         });
 
         window.addEventListener('resize', function () {
+            let menu = document.getElementById('menu');
+            if (window.innerWidth >= 768) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        });
+
+        // Garantir que o menu esteja visível em telas maiores ao carregar a página
+        window.addEventListener('load', function () {
             let menu = document.getElementById('menu');
             if (window.innerWidth >= 768) {
                 menu.classList.remove('hidden');

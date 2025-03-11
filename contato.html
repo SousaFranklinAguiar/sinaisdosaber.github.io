@@ -42,6 +42,16 @@
                 menu.classList.add('hidden');
             }
         });
+
+        // Garantir que o menu esteja visível em telas maiores ao carregar a página
+        window.addEventListener('load', function () {
+            let menu = document.getElementById('menu');
+            if (window.innerWidth >= 768) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        });
     </script>
 </body>
 </html>
