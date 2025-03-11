@@ -1,90 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sinais do Saber</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-    .header {
-      width: 100%;
-      background: #333;
-      color: white;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .menu {
-      display: flex;
-      gap: 20px;
-    }
-    .menu a {
-      color: white;
-      text-decoration: none;
-    }
-    .menu-toggle {
-      display: none;
-      font-size: 24px;
-      cursor: pointer;
-    }
-    @media (max-width: 768px) {
-      .menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: #444;
-        text-align: left;
-        padding: 10px 0;
-      }
-      .menu a {
-        display: block;
-        padding: 10px;
-      }
-      .menu-toggle {
-        display: block;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinais do Saber</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-<header class="header">
-  <h1>Sinais do Saber</h1>
-  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-  <nav class="menu" id="menu">
-    <a href="index.html">Início</a>
-<!--    <a href="about.html">Sobre</a>-->
-<!--    <a href="services.html">Serviços</a>-->
-    <a href="contato.html">Contato</a>
-  </nav>
-</header>
-<main>
-  <section style="margin-top: 30px" id="home">
-    <h2>Contato</h2>
-    <img style="width: 200px" src="assets/bem-vindo.gif">
-    <p>Novidas em breve.</p>
-  </section>
-</main>
-<script>
-  function toggleMenu() {
-    const menu = document.getElementById('menu');
-    menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
-  }
-</script>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+    <header class="bg-blue-600 text-white p-4 flex justify-between items-center relative">
+        <h1 class="text-xl font-bold">Sinais do Saber</h1>
+        <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+            ☰
+        </button>
+        <nav class="hidden absolute top-16 left-0 w-full bg-blue-600 text-white flex flex-col items-center space-y-4 py-4 md:relative md:top-0 md:w-auto md:flex-row md:space-y-0 md:space-x-4" id="menu">
+            <a href="index.html" class="hover:underline">Início</a>
+            <a href="contato.html" class="hover:underline">Contato</a>
+        </nav>
+    </header>
+    
+    <main class="p-8 text-center flex-grow">
+        <h2 class="text-3xl font-bold text-gray-800">Contato</h2>
+    </main>
+    
+    <footer class="bg-blue-600 text-white text-center p-4">
+        <p>&copy; 2025 Sinais do Saber. Todos os direitos reservados.</p>
+    </footer>
+    
+    <script>
+        document.getElementById('menu-btn').addEventListener('click', function () {
+            let menu = document.getElementById('menu');
+            if (window.innerWidth < 768) {
+                menu.classList.toggle('hidden');
+            }
+        });
+
+        window.addEventListener('resize', function () {
+            let menu = document.getElementById('menu');
+            if (window.innerWidth >= 768) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        });
+    </script>
 </body>
 </html>
