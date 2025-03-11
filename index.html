@@ -28,6 +28,12 @@
       <p class="text-gray-600 mt-2">Libras é a sigla da Língua Brasileira de Sinais, uma língua gestual-visual que permite comunicação por gestos, 
         expressões faciais e corporais. É um meio reconhecido de comunicação desde 24 de abril de 2002, 
         pela Lei nº 10. 436. A Libras é amplamente utilizada na comunicação com surdos, sendo uma importante ferramenta de inclusão social.</p>
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+              <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
   </main>
     
     <footer class="bg-blue-600 text-white text-center p-4">
@@ -60,6 +66,10 @@
                 menu.classList.add('hidden');
             }
         });
+    </script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget('https://vlibras.gov.br/app');
     </script>
 </body>
 </html>
