@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sinais do Saber</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .header {
+      width: 100%;
+      background: #333;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .menu {
+      display: flex;
+      gap: 20px;
+    }
+    .menu a {
+      color: white;
+      text-decoration: none;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #444;
+        text-align: left;
+        padding: 10px 0;
+      }
+      .menu a {
+        display: block;
+        padding: 10px;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+<header class="header">
+  <h1>Sinais do Saber</h1>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <nav class="menu" id="menu">
+    <a href="index.html">Início</a>
+<!--    <a href="about.html">Sobre</a>-->
+<!--    <a href="services.html">Serviços</a>-->
+    <a href="contato.html">Contato</a>
+  </nav>
+</header>
+<main>
+  <section style="margin-top: 30px" id="home">
+    <h2>Contato</h2>
+    <img style="width: 200px" src="assets/bem-vindo.gif">
+    <p>Novidas em breve.</p>
+  </section>
+</main>
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+  }
+</script>
+</body>
+</html>
